@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Вибір вигляду NeoLab</title>
+<style>
+/* Шрифти лежать поруч зі сторінкою, нічого не завантажується ззовні. */
+@font-face{font-family:'Inter';font-weight:100 900;font-display:swap;src:url(fonts/inter-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Inter';font-weight:100 900;font-display:swap;src:url(fonts/inter-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+@font-face{font-family:'Montserrat';font-weight:100 900;font-display:swap;src:url(fonts/montserrat-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-weight:100 900;font-display:swap;src:url(fonts/montserrat-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+@font-face{font-family:'Open Sans';font-weight:300 800;font-display:swap;src:url(fonts/open-sans-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-weight:300 800;font-display:swap;src:url(fonts/open-sans-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+@font-face{font-family:'Nunito Sans';font-weight:200 1000;font-display:swap;src:url(fonts/nunito-sans-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Nunito Sans';font-weight:200 1000;font-display:swap;src:url(fonts/nunito-sans-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+@font-face{font-family:'Source Sans 3';font-weight:200 900;font-display:swap;src:url(fonts/source-sans-3-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Source Sans 3';font-weight:200 900;font-display:swap;src:url(fonts/source-sans-3-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+@font-face{font-family:'Noto Sans';font-weight:100 900;font-display:swap;src:url(fonts/noto-sans-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Noto Sans';font-weight:100 900;font-display:swap;src:url(fonts/noto-sans-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+@font-face{font-family:'Manrope';font-weight:200 800;font-display:swap;src:url(fonts/manrope-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-weight:200 800;font-display:swap;src:url(fonts/manrope-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+@font-face{font-family:'IBM Plex Sans';font-weight:100 700;font-display:swap;src:url(fonts/ibm-plex-sans-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'IBM Plex Sans';font-weight:100 700;font-display:swap;src:url(fonts/ibm-plex-sans-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-display:swap;src:url(fonts/roboto-flex-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-display:swap;src:url(fonts/roboto-flex-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+@font-face{font-family:'Raleway';font-weight:100 900;font-display:swap;src:url(fonts/raleway-cyrillic.woff2) format('woff2-variations');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Raleway';font-weight:100 900;font-display:swap;src:url(fonts/raleway-latin.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+20AC,U+2013-2014,U+2018-201D,U+2022,U+2026}
+
+:root{--ui:#1d2420;--ui2:#59655e;--uiline:#d5dad3;--uibg:#eef1ed;--uisurface:#fff;--uia:#244a31}
+*{box-sizing:border-box}
+body{margin:0;background:var(--uibg);color:var(--ui);font:16px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+.layout{display:grid;grid-template-columns:340px minmax(0,1fr);min-height:100vh}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.side{position:static;max-height:none}}
+.side{background:var(--uisurface);border-right:1px solid var(--uiline);padding:20px 18px 40px;position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto}
+.side h1{font-size:20px;margin:0 0 4px}
+.side .lead{color:var(--ui2);font-size:14px;margin:0 0 16px}
+fieldset{border:0;margin:0 0 18px;padding:0}
+legend{font-weight:700;font-size:14px;letter-spacing:.02em;margin-bottom:8px;padding:0}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer;width:100%;height:100%;margin:0}
+.opt span{display:block;padding:9px 13px;border:1.5px solid #9aa59d;border-radius:8px;font-size:14px;background:#fff;min-height:40px;display:flex;align-items:center;gap:8px}
+.opt input:checked+span{border-color:var(--uia);background:#e6efe8;font-weight:700;box-shadow:0 0 0 2px var(--uia) inset}
+.opt input:focus-visible+span{outline:3px solid #1d5fbf;outline-offset:2px}
+.sw{width:18px;height:18px;border-radius:50%;border:1px solid rgba(0,0,0,.25);flex:none}
+.presets .opt span{font-weight:600}
+.main{padding:18px 22px 40px;min-width:0}
+.choice{position:sticky;top:0;z-index:5;background:#fff;border:2px solid var(--uia);border-radius:10px;padding:12px 16px;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.choice h2{font-size:15px;margin:0 0 6px}
+.choice dl{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:4px 18px;margin:0;font-size:14px}
+.choice dt{color:var(--ui2);font-size:12px;margin:0}
+.choice dd{margin:0 0 4px;font-weight:700}
+.choice code{display:block;margin-top:8px;font:12px/1.4 ui-monospace,Menlo,monospace;background:#f1f3f0;padding:6px 8px;border-radius:6px;word-break:break-all}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+.tools button,.widths button{font:inherit;font-size:14px;padding:8px 13px;border:1.5px solid #8b968e;background:#fff;border-radius:8px;cursor:pointer;min-height:40px}
+.widths{display:flex;gap:8px;margin:0 0 14px;align-items:center;flex-wrap:wrap}
+.widths button[aria-pressed=true]{border-color:var(--uia);background:#e6efe8;font-weight:700}
+.stage{display:flex;justify-content:center;padding:6px 0 10px}
+
+/* ===== Макет застосунку у вікні перегляду: усе керується змінними ===== */
+.frame{--bg:#F2F4F1;--sf:#fff;--ink:#1B211D;--ink2:#4E5A53;--line:#D6DBD4;--a:#2A6B3C;--b:#244A31;--soft:#E4EFE7;--btnink:#fff;--field:#7E8B80;
+  --radius:8px;--pad:12px;--fs:18px;--font:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--head-bg:#1B1D18;--head-ink:#F2F3EF;--head-line:#A8D65F;
+  --y:#F4E9A4;--o:#F3C18D;--g:#CFE6C8;--r:#F0B7B0;--n:#E2E5DF;
+  width:100%;background:var(--bg);color:var(--ink);font:var(--fs)/1.5 var(--font);border:1px solid var(--uiline);border-radius:10px;overflow:hidden;container-type:inline-size}
+.frame[data-theme=dark]{--bg:#131815;--sf:#1B231E;--ink:#E9EEEA;--ink2:#A6B3AA;--line:#33403A;--field:#8FA095;--btnink:#0F1A13;--y:#6B6224;--o:#7A5226;--g:#2E5A3A;--r:#7A3B34;--n:#3A433D}
+.frame[data-theme=dark] .chip{color:#fff}
+.frame *{box-sizing:border-box}
+.fh{background:var(--head-bg);color:var(--head-ink);padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;border-bottom:3px solid var(--head-line)}
+.fh .logo{font-family:var(--bf,var(--font));font-weight:700;letter-spacing:.3em;font-size:1.2em}
+.fh .logo b{color:var(--head-line)}
+.fh .sp{flex:1}
+.fh .who{font-size:.8em;opacity:.9}
+.tabs{display:flex;gap:4px;padding:0 14px;border-bottom:1px solid var(--line);background:var(--bg);overflow:auto}
+.tabs span{padding:12px 15px;color:var(--ink2);white-space:nowrap;font-weight:500;border-bottom:4px solid transparent}
+.tabs span.on{color:var(--ink);border-bottom-color:var(--a)}
+.frame[data-tabs=pills] .tabs{padding:10px 14px;gap:6px;border-bottom:1px solid var(--line)}
+.frame[data-tabs=pills] .tabs span{border-radius:999px;border:0;padding:8px 16px}
+.frame[data-tabs=pills] .tabs span.on{background:var(--b);color:var(--btnink)}
+.body{padding:20px}
+.body h1{font-family:var(--bf,var(--font));font-size:1.7em;line-height:1.15;margin:0 0 4px}
+.body .sub{color:var(--ink2);margin:0 0 16px;font-size:.92em}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border:1px solid var(--line);border-radius:var(--radius);background:var(--sf);margin-bottom:16px;overflow:hidden}
+.kpi{padding:14px 16px;border-right:1px solid var(--line)}
+.kpi .k{font-size:.85em;color:var(--ink2)}
+.kpi .v{font-size:1.5em;font-weight:700;margin-top:2px}
+.kpi.main{background:var(--soft)}
+.num{font-variant-numeric:tabular-nums}
+.frame[data-nums=mono] .num{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px}
+label.f{display:flex;flex-direction:column;gap:5px;font-size:.88em;color:var(--ink2)}
+.in,.sel{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:calc(var(--radius) - 2px);padding:10px 14px;min-height:46px;min-width:170px}
+.frame[data-field=strong] .in,.frame[data-field=strong] .sel{border-color:var(--field)}
+.sel{appearance:none;-webkit-appearance:none;padding-right:44px;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 23px) 50%,calc(100% - 16px) 50%;background-size:7px 7px;background-repeat:no-repeat}
+.chk{display:flex;gap:10px;align-items:center;min-height:46px}
+.chk i{width:24px;height:24px;border-radius:5px;background:var(--b);color:var(--btnink);display:grid;place-items:center;font-style:normal;font-size:16px}
+.btn{font:inherit;padding:10px 18px;min-height:46px;border-radius:calc(var(--radius) - 2px);border:1.5px solid var(--field);background:var(--sf);color:var(--ink);font-weight:600}
+.btn.pri{background:var(--b);color:var(--btnink);border-color:var(--b)}
+.btn.dng{color:#B3261E;border-color:#B3261E}
+.frame[data-theme=dark] .btn.dng{color:#F2877F;border-color:#F2877F}
+.panel{background:var(--sf);border:1px solid var(--line);border-radius:var(--radius);padding:4px;overflow:auto;margin-bottom:16px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:.82em;color:var(--ink);background:color-mix(in srgb,var(--ink) 6%,var(--sf));padding:calc(var(--pad) - 1px) calc(var(--pad) + 2px);border-bottom:2px solid var(--ink2);white-space:nowrap}
+td{padding:var(--pad) calc(var(--pad) + 2px);border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--ink) 3.5%,transparent)}
+td.r,th.r{text-align:right}
+td a{color:var(--a);font-weight:700}
+.chip{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.82em;font-weight:600;color:#1c2318;white-space:nowrap}
+.s0{background:var(--n)}.s1{background:var(--y)}.s2{background:var(--o)}.s3{background:var(--r)}.s4{background:var(--g)}
+.frame[data-chips=solid] .s1{background:#E9C400}.frame[data-chips=solid] .s2{background:#E87A1C}.frame[data-chips=solid] .s4{background:#3C9A52;color:#fff}.frame[data-chips=solid] .s3{background:#D9574B;color:#fff}.frame[data-chips=solid] .s0{background:#6C766F;color:#fff}
+.frame[data-chips=dot] .chip{background:transparent!important;color:var(--ink);padding:0;font-weight:600}
+.frame[data-chips=dot] .chip::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;background:currentColor;vertical-align:baseline}
+.frame[data-chips=dot] .s0::before{background:#8A948D}.frame[data-chips=dot] .s1::before{background:#E9C400}.frame[data-chips=dot] .s2::before{background:#E87A1C}.frame[data-chips=dot] .s3::before{background:#D9574B}.frame[data-chips=dot] .s4::before{background:#3C9A52}
+.slips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:6px}
+.slip{border-radius:calc(var(--radius) - 2px);padding:12px 14px;color:#1c2318;font-size:.9em}
+.slip b{display:block;margin-bottom:4px}
+@container (max-width:700px){
+  .body{padding:14px}
+  table.st thead{position:absolute;left:-9999px}
+  table.st,table.st tbody,table.st tr,table.st td{display:block;width:100%}
+  table.st tr{border:1px solid var(--line);border-radius:var(--radius);margin:0 0 10px;padding:4px 0;background:var(--sf)}
+  table.st td{display:flex;justify-content:space-between;gap:12px;border:0;padding:4px 12px;text-align:right}
+  table.st td::before{content:attr(data-l);color:var(--ink2);font-size:.85em;text-align:left}
+  .in,.sel{min-width:0;width:100%}
+  label.f{flex:1 1 100%}
+}
+.note{font-size:13px;color:var(--ui2);margin:6px 0 0}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="side" aria-label="Параметри вигляду">
+  <h1>Вибір вигляду NeoLab</h1>
+  <p class="lead">Натискайте варіанти, праворуч одразу видно результат. Коли сподобається, зробіть скріншот усієї сторінки й надішліть. У рамці зверху зберігається ваш вибір.</p>
+  <fieldset class="presets"><legend>Готові набори</legend><div class="opts" id="o-preset"></div></fieldset>
+  <fieldset><legend>Тема</legend><div class="opts" id="o-theme"></div></fieldset>
+  <fieldset><legend>Основний колір</legend><div class="opts" id="o-palette"></div></fieldset>
+  <fieldset><legend>Верхня смуга</legend><div class="opts" id="o-header"></div></fieldset>
+  <fieldset><legend>Шрифт</legend><div class="opts" id="o-font"></div></fieldset>
+  <fieldset><legend>Розмір тексту</legend><div class="opts" id="o-size"></div></fieldset>
+  <fieldset><legend>Щільність таблиць</legend><div class="opts" id="o-density"></div></fieldset>
+  <fieldset><legend>Кути</legend><div class="opts" id="o-radius"></div></fieldset>
+  <fieldset><legend>Статуси</legend><div class="opts" id="o-chips"></div></fieldset>
+  <fieldset><legend>Рамки полів</legend><div class="opts" id="o-field"></div></fieldset>
+  <fieldset><legend>Вкладки</legend><div class="opts" id="o-tabs"></div></fieldset>
+  <fieldset><legend>Цифри</legend><div class="opts" id="o-nums"></div></fieldset>
+</aside>
+<main class="main">
+  <section class="choice" aria-live="polite" aria-label="Ваш вибір">
+    <h2>Ваш вибір (на скріншоті буде видно разом із виглядом)</h2>
+    <dl id="summary"></dl>
+    <code id="code"></code>
+    <div class="tools"><button id="copy">Скопіювати код вибору</button><button id="share">Скопіювати посилання на мій вибір</button><button id="reset">Скинути</button></div>
+  </section>
+  <div class="widths" role="group" aria-label="Ширина екрана"><span>Дивитись як на:</span>
+    <button data-w="100%" aria-pressed="true">Комп'ютері</button><button data-w="780px" aria-pressed="false">Планшеті</button><button data-w="390px" aria-pressed="false">Телефоні</button></div>
+  <div class="stage"><div class="frame" id="frame" style="max-width:100%">
+    <header class="fh"><div class="logo">NEO<b>LAB</b></div><div class="sp"></div><div class="who">Олена · Адміністратор</div><span class="btn" style="min-height:40px;padding:6px 14px;background:transparent;color:inherit;border-color:currentColor">Вийти</span></header>
+    <nav class="tabs"><span>Огляд</span><span class="on">Наряди</span><span>Зарплата</span><span>Клініки і борги</span><span>Витрати</span><span>Гроші</span></nav>
+    <div class="body">
+      <h1>Наряди</h1><p class="sub">Номер присвоюється автоматично. Один наряд може вести кілька техніків.</p>
+      <div class="kpis"><div class="kpi"><div class="k">Здано клінікам</div><div class="v num">3 724 €</div></div><div class="kpi"><div class="k">Оплачено</div><div class="v num">4 510 €</div></div><div class="kpi"><div class="k">Борг клінік</div><div class="v num">1 650 €</div></div><div class="kpi main"><div class="k">Маржа</div><div class="v num">2 301 €</div></div></div>
+      <div class="row">
+        <label class="f">Пошук<span class="in">Номер, пацієнт, клініка</span></label>
+        <label class="f">Статус<span class="sel">Усі</span></label>
+        <label class="f">Клініка<span class="sel">Master Class</span></label>
+        <span class="chk"><i>✓</i> Лише прострочені</span>
+        <span class="btn pri">+ Новий наряд</span>
+      </div>
+      <div class="panel"><table class="st"><thead><tr><th>№</th><th>Дата</th><th>Клініка</th><th>Роботи</th><th>Статус</th><th class="r">Сума</th></tr></thead><tbody>
+        <tr><td data-l="№"><a>1082</a></td><td data-l="Дата" class="num">23.11.2026</td><td data-l="Клініка">Da Vinci</td><td data-l="Роботи">2× Zr анатомія</td><td data-l="Статус"><span class="chip s1">В роботі</span></td><td data-l="Сума" class="r num">110 €</td></tr>
+        <tr><td data-l="№"><a>1081</a></td><td data-l="Дата" class="num">23.11.2026</td><td data-l="Клініка">Master Class</td><td data-l="Роботи">1× Zr анатомія, 1× Капа</td><td data-l="Статус"><span class="chip s2">Примірка</span></td><td data-l="Сума" class="r num">70 €</td></tr>
+        <tr><td data-l="№"><a>1080</a></td><td data-l="Дата" class="num">22.11.2026</td><td data-l="Клініка">Діамант (власник)</td><td data-l="Роботи">3× Тимчасова коронка</td><td data-l="Статус"><span class="chip s4">Здано</span></td><td data-l="Сума" class="r num">36 €</td></tr>
+        <tr><td data-l="№"><a>1079</a></td><td data-l="Дата" class="num">21.11.2026</td><td data-l="Клініка">Poki Dent</td><td data-l="Роботи">1× Металокераміка</td><td data-l="Статус"><span class="chip s3">Переробка</span></td><td data-l="Сума" class="r num">50 €</td></tr>
+        <tr><td data-l="№"><a>1078</a></td><td data-l="Дата" class="num">21.11.2026</td><td data-l="Клініка">BIAC</td><td data-l="Роботи">1× Капа</td><td data-l="Статус"><span class="chip s0">Прийнято</span></td><td data-l="Сума" class="r num">20 €</td></tr>
+      </tbody></table></div>
+      <div class="panel" style="padding:16px"><b style="font-family:var(--bf,var(--font))">Нова робота</b>
+        <div class="row" style="margin-top:10px"><label class="f">Назва<span class="in">Zr анатомія</span></label><label class="f">Модель оплати<span class="sel">Фіксовано за одиницю</span></label><label class="f">Ціна, €<span class="in num">55,00</span></label>
+        <span class="btn">Скасувати</span><span class="btn pri">Зберегти</span><span class="btn dng">Видалити</span></div></div>
+      <div class="slips"><div class="slip" style="background:var(--y)"><b>Жовтий · внутрішній наряд № 1082</b>2× Zr анатомія · Марта · 21 €</div><div class="slip" style="background:var(--g)"><b>Зелений · наряд клініці</b>Разом до оплати: 110 €</div><div class="slip" style="background:var(--o)"><b>Помаранчевий · картка техніка</b>Нараховано: 49 € · Виплачено: 20 €</div></div>
+    </div>
+  </div></div>
+  <p class="note">Це лише зразок для вибору вигляду, окремий від самої системи. Дані на екрані вигадані.</p>
+</main>
+</div>
+<script>
+const PALETTES = {
+  green:{n:'Спокійний зелений',a:'#2A6B3C',b:'#244A31',soft:'#E4EFE7',ad:'#88C79B',bd:'#88C79B',softd:'#243529',sw:'#2A6B3C',hl:'#A8D65F'},
+  brand:{n:'Бренд NEO LAB (лайм)',a:'#3F6B00',b:'#2F5200',soft:'#EAF3D5',ad:'#A8D65F',bd:'#A8D65F',softd:'#2B3A14',sw:'#A8D65F',hl:'#A8D65F'},
+  mint:{n:'М\'ятний',a:'#1F7A5C',b:'#16604A',soft:'#DFF3EA',ad:'#7DD3B0',bd:'#7DD3B0',softd:'#1B3A2F',sw:'#2FA37E',hl:'#7DD3B0'},
+  teal:{n:'Бірюзовий',a:'#0E7490',b:'#0B5C73',soft:'#DCF1F6',ad:'#67D1E8',bd:'#67D1E8',softd:'#143841',sw:'#0E7490',hl:'#67D1E8'},
+  blue:{n:'Синій',a:'#1D5FBF',b:'#174A94',soft:'#E1ECFB',ad:'#8DB8F5',bd:'#8DB8F5',softd:'#1B2C47',sw:'#1D5FBF',hl:'#8DB8F5'},
+  indigo:{n:'Індиго',a:'#4B4FC4',b:'#3A3DA0',soft:'#E8E9FB',ad:'#A9ACF5',bd:'#A9ACF5',softd:'#25274A',sw:'#4B4FC4',hl:'#A9ACF5'},
+  graphite:{n:'Графіт (нейтральний)',a:'#374151',b:'#1F2937',soft:'#E8EAED',ad:'#C7CDD6',bd:'#C7CDD6',softd:'#2B3036',sw:'#374151',hl:'#C7CDD6'},
+  burgundy:{n:'Бордо',a:'#9B2C3F',b:'#7A1F2F',soft:'#F8E4E8',ad:'#F0A5B2',bd:'#F0A5B2',softd:'#40222A',sw:'#9B2C3F',hl:'#F0A5B2'},
+};
+const FONTS = {
+  system:['Системний (як на пристрої)','system-ui,-apple-system,\'Segoe UI\',Roboto,Arial,sans-serif'],
+  inter:['Inter','\'Inter\',system-ui,sans-serif'],
+  roboto:['Roboto Flex','\'Roboto Flex\',system-ui,sans-serif'],
+  opensans:['Open Sans','\'Open Sans\',system-ui,sans-serif'],
+  noto:['Noto Sans','\'Noto Sans\',system-ui,sans-serif'],
+  nunito:['Nunito Sans (м\'який)','\'Nunito Sans\',system-ui,sans-serif'],
+  source:['Source Sans 3','\'Source Sans 3\',system-ui,sans-serif'],
+  plex:['IBM Plex Sans','\'IBM Plex Sans\',system-ui,sans-serif'],
+  manrope:['Manrope','\'Manrope\',system-ui,sans-serif'],
+  montserrat:['Montserrat (широкий)','\'Montserrat\',system-ui,sans-serif'],
+  raleway:['Raleway','\'Raleway\',system-ui,sans-serif'],
+};
+const OPTIONS = {
+  theme:{label:'Тема',vals:{light:'Світла',dark:'Темна'}},
+  palette:{label:'Колір',vals:Object.fromEntries(Object.entries(PALETTES).map(([k,v])=>[k,v.n]))},
+  header:{label:'Верхня смуга',vals:{dark:'Темна',accent:'Кольорова',light:'Світла'}},
+  font:{label:'Шрифт',vals:Object.fromEntries(Object.entries(FONTS).map(([k,v])=>[k,v[0]]))},
+  size:{label:'Розмір тексту',vals:{16:'16 px',18:'18 px',20:'20 px',22:'22 px'}},
+  density:{label:'Щільність',vals:{compact:'Компактна',normal:'Звичайна',airy:'Просторa'}},
+  radius:{label:'Кути',vals:{sharp:'Гострі',soft:'Помірні',round:'Круглі'}},
+  chips:{label:'Статуси',vals:{soft:'Бліді плашки',solid:'Насичені плашки',dot:'Крапка з текстом'}},
+  field:{label:'Рамки полів',vals:{soft:'М\'які',strong:'Чіткі'}},
+  tabs:{label:'Вкладки',vals:{underline:'Підкреслення',pills:'Таблетки'}},
+  nums:{label:'Цифри',vals:{mono:'Моноширинні',same:'Той самий шрифт'}},
+};
+const DEFAULT = {theme:'light',palette:'green',header:'dark',font:'system',size:'18',density:'normal',radius:'soft',chips:'soft',field:'strong',tabs:'underline',nums:'mono'};
+const PRESETS = {
+  current:['Поточний (спокійний)',{...DEFAULT}],
+  brand:['Бренд NEO LAB',{theme:'dark',palette:'brand',header:'dark',font:'montserrat',size:'18',density:'normal',radius:'soft',chips:'soft',field:'strong',tabs:'underline',nums:'mono'}],
+  lowvision:['Для слабкого зору',{theme:'light',palette:'graphite',header:'light',font:'noto',size:'22',density:'airy',radius:'soft',chips:'solid',field:'strong',tabs:'underline',nums:'same'}],
+  soft:['М\'який офісний',{theme:'light',palette:'blue',header:'accent',font:'nunito',size:'18',density:'airy',radius:'round',chips:'soft',field:'soft',tabs:'pills',nums:'same'}],
+  strict:['Діловий строгий',{theme:'light',palette:'indigo',header:'dark',font:'inter',size:'16',density:'compact',radius:'sharp',chips:'dot',field:'strong',tabs:'underline',nums:'mono'}],
+  night:['Нічний',{theme:'dark',palette:'teal',header:'dark',font:'plex',size:'18',density:'normal',radius:'soft',chips:'soft',field:'strong',tabs:'pills',nums:'mono'}],
+};
+let state = {...DEFAULT};
+const $ = id => document.getElementById(id);
+
+function build(){
+  for(const [key,opt] of Object.entries(OPTIONS)){
+    const box=$('o-'+key);
+    for(const [val,name] of Object.entries(opt.vals)){
+      const id=`r-${key}-${val}`;
+      const sw=key==='palette'?`<i class="sw" style="background:${PALETTES[val].sw}"></i>`:'';
+      box.insertAdjacentHTML('beforeend',`<label class="opt"><input type="radio" name="${key}" value="${val}" id="${id}"><span>${sw}${name}</span></label>`);
+    }
+  }
+  const pb=$('o-preset');
+  for(const [k,[n]] of Object.entries(PRESETS)) pb.insertAdjacentHTML('beforeend',`<label class="opt"><input type="radio" name="preset" value="${k}"><span>${n}</span></label>`);
+  document.addEventListener('change',e=>{
+    const t=e.target; if(t.type!=='radio')return;
+    if(t.name==='preset'){state={...PRESETS[t.value][1]}} else {state[t.name]=t.value}
+    apply(t.name!=='preset');
+  });
+}
+function apply(clearPreset=false){
+  const f=$('frame'); const P=PALETTES[state.palette]; const dark=state.theme==='dark';
+  f.dataset.theme=state.theme; f.dataset.tabs=state.tabs; f.dataset.chips=state.chips; f.dataset.field=state.field; f.dataset.nums=state.nums;
+  const s=f.style;
+  s.setProperty('--a',dark?P.ad:P.a); s.setProperty('--b',dark?P.bd:P.b); s.setProperty('--soft',dark?P.softd:P.soft);
+  s.setProperty('--btnink',dark?'#0F1A13':'#fff');
+  s.setProperty('--font',FONTS[state.font][1]);
+  s.setProperty('--fs',state.size+'px');
+  s.setProperty('--pad',{compact:'8px',normal:'12px',airy:'18px'}[state.density]);
+  s.setProperty('--radius',{sharp:'2px',soft:'8px',round:'16px'}[state.radius]);
+  const head={dark:['#1B1D18','#F2F3EF',P.hl],accent:[dark?P.bd:P.b,dark?'#0F1A13':'#fff',dark?'#0F1A13':'#fff'],light:[dark?'#1B231E':'#FFFFFF',dark?'#E9EEEA':'#1B211D',dark?P.ad:P.a]}[state.header];
+  s.setProperty('--head-bg',head[0]); s.setProperty('--head-ink',head[1]); s.setProperty('--head-line',head[2]);
+  document.documentElement.style.setProperty('--uia',P.b);
+  for(const [k,v] of Object.entries(state)){const r=document.querySelector(`input[name="${k}"][value="${v}"]`); if(r) r.checked=true;}
+  if(clearPreset) document.querySelectorAll('input[name="preset"]').forEach(r=>r.checked=false);
+  else { const m=Object.entries(PRESETS).find(([,[,v]])=>JSON.stringify(v)===JSON.stringify(state)); document.querySelectorAll('input[name="preset"]').forEach(r=>r.checked=m&&r.value===m[0]); }
+  summary();
+  try{ history.replaceState(null,'','#'+code()); }catch(e){}
+}
+const code=()=>Object.entries(state).map(([k,v])=>`${k}=${v}`).join(';');
+function summary(){
+  $('summary').innerHTML=Object.entries(OPTIONS).map(([k,o])=>`<div><dt>${o.label}</dt><dd>${o.vals[state[k]]}</dd></div>`).join('');
+  $('code').textContent='Код вибору: '+code();
+}
+function readHash(){
+  const h=decodeURIComponent(location.hash.slice(1)); if(!h) return;
+  for(const part of h.split(';')){const [k,v]=part.split('='); if(OPTIONS[k]&&OPTIONS[k].vals[v]!==undefined) state[k]=v;}
+}
+function copy(text,btn){
+  const done=()=>{const o=btn.textContent;btn.textContent='Скопійовано';setTimeout(()=>btn.textContent=o,1600)};
+  if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done,()=>{prompt('Скопіюйте:',text)}); else prompt('Скопіюйте:',text);
+}
+build(); readHash(); apply();
+$('copy').onclick=e=>copy(code(),e.target);
+$('share').onclick=e=>copy(location.href,e.target);
+$('reset').onclick=()=>{state={...DEFAULT};apply()};
+document.querySelectorAll('.widths button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.widths button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  $('frame').style.maxWidth=b.dataset.w;
+});
+</script>
+</body>
+</html>
